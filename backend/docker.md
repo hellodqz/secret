@@ -17,3 +17,6 @@ docker run -it -P --name test --mount type=bind,source=/home/GitHub,target=/home
 docker run -it -P --name test --mount type=bind,source=e:\GitCode,target=/home/fengbingchun fengbingchun/ubuntu:16.04 /bin/bash # windows
 docker inspect yyyy # 查看容器中挂载主机目录的具体信息，挂载主机目录的配置信息在"Mounts"字段内，"yyyy"为容器名
 ```
+### docker常用命令
+1. docker ps查看是否安装成功
+2. docker run --name mysql5.6 -p 3306:3306 -v D:/workspace/database/mysql/mysql5.6:/var/lib/mysql -v D:/workspace/database/mysql/mysql5.6/conf:/etc/mysql/conf.d -v D:/workspace/database/mysql/mysql5.6/logs:/var/log/mysql -e MYSQL_ROOT_PASSWORD=swarm -d mysql:5.6

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rem&em</title>
+</head>
+<body>
+  <div class="body">
+    <div class="font">
+      <!-- abc你好 -->
+    </div>
+  </div>
+</body>
+<style>
+  html {
+    font-size: calc(26 / 1080 * 100vw);
+  }
+  .body {
+    width: 2rem;
+    height: 5rem;
+    background-color: antiquewhite;
+  }
+  .font {
+    /* font-size: 40px; 自定义div内字体尺寸 会继承父级元素字体大小 不填则em等于浏览器默认字体尺寸 16px 1em=16px  
+    body选择器中声明Font-size=62.5% 则1em= 10px
+    */
+    width: 1em;
+    height: 1em;
+    background-color: azure;
+  }
+</style>
+</html>
