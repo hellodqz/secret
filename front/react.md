@@ -1,8 +1,10 @@
+> **dva** 是一个基于 Redux 的 轻量级数据流方案,这个有点像vuex，概念来自 elm，支持 side effects、热替换、动态加载、react-native、SSR 等，已在生产环境广泛应用
+
 ## Tips：
 
 - 如无必要 勿增实体 沿用es6
 - jsx 代码 render函数里面 html正常写 js要加{}
-- react 和 vue 区别 浅析： react：还是使用js编写 react作为助手 提供工具帮助 vue：直接面对vue 写vue代码 
+- react 和 vue 区别 浅析： react：还是使用js编写 react作为助手 提供工具帮助 直接面对js| vue：直接面对vue 写vue代码   直接面对html
 - jsx =js + xml babel 将jsx编译为js代码 最后给浏览器渲染执行
 - vsc 插件 快捷方式 生成组件代码 rcc
 - 单向数据绑定
@@ -20,6 +22,8 @@
 ## 知识点
 
 #### 1. [FAQ: state 与 props 的区别是什么？](https://zh-hans.reactjs.org/docs/faq-state.html#what-is-the-difference-between-state-and-props)
+
+#### 2. antd: 
 
 ## 组件 单一功能原则
 
@@ -114,6 +118,10 @@ this.state = {
         posts: response.posts
       });
 ```
+
+## jsx
+
+
 
 
 
