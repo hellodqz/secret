@@ -12,6 +12,7 @@
 - <React.StrictMode> <App/></> 打开严格模式
 - 重点 修正this指向、
 - for循环遍历 不可以用index 删除调换位置 一般后端给id
+- 大多数 React 应用只会调用一次 `root.render()`
 
 ## react 编码哲学
 
@@ -25,8 +26,12 @@
 
 #### 2. antd: 
 
-## 组件 单一功能原则
+## 组件
 
+>  单一功能原则
+>
+> 组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素
+>
 > ui的 Photoshop\figma 的图层名称可能最终就是你编写的 React 组件的名称！UI（或者说组件结构）便会与数据模型一一对应
 
 ES6 class Test 类名大写
