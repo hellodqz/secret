@@ -151,5 +151,58 @@ this.state = {
 
 将状态提升至就近父组件 有props传入各子组件 子组件改变值后 由子组件调用父组件传入的函数 返回
 
+## 组合&继承 不用继承
 
+推荐组合 就是vue中slot插槽
 
+## 特性
+
+import动态加载 
+
+# Context
+
+Context 提供了一种在组件之间共享此类值的方式，而不必显式地通过组件树的逐层传递 props。
+
+## 错误边界 try catch 
+
+固定标签包裹组件 发生错误 展示默认组件 并打印错误
+
+## 转发 refs 到 DOM 组件
+
+父组件 创建ref对象并放在自身ref中 将其通过转发向内层传递 并挂在需要的子组件上 这样就可以通过ref直接获取改组件
+
+```
+const ref = React.createRef();
+<FancyButton ref={ref}>Click me!</FancyButton>;
+const FancyButton = React.forwardRef((props, ref) => (
+  <button ref={ref} className="FancyButton">
+    {props.children}
+  </button>
+));
+```
+
+### Fragments返回一个子元素列表
+
+```
+render() {
+    return (
+      <React.Fragment>        <td>Hello</td>
+        <td>World</td>
+      </React.Fragment>    );
+  }
+  //简写
+  return (
+      <>
+        <td>Hello</td>
+        <td>World</td>
+      </>
+    );
+```
+
+## 高阶组件
+
+是一种基于 React 的组合特性而形成的设计模式
+
+> **高阶组件是参数为组件，返回值为新组件的函数。**
+
+用于 组件抽象  之前用mixin 现在弃用
