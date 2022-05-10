@@ -102,6 +102,10 @@ let ref1 = React.createRef()
 > state setState修改状态
 >
 > vue vuex
+>
+> 状态就是 UI 中的动态数据
+>
+> 父子通信较简单，而深层级、远距离组件的通信，则依赖于 "状态提升" + props 层层传递
 
 ### 写法：
 
