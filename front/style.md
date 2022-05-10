@@ -1,7 +1,5 @@
 ## css
 
-> css3
-
 ### 1. common
 
 1. div > span 选择div直接下一级中的span
