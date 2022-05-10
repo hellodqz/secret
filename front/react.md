@@ -3,6 +3,7 @@
 ## Tips：
 
 - 如无必要 勿增实体 沿用es6
+- **所有 React 组件都必须像纯函数一样保护它们的 props 不被更改。**
 - jsx 代码 render函数里面 html正常写 js要加{}
 - react 和 vue 区别 浅析： react：还是使用js编写 react作为助手 提供工具帮助 直接面对js| vue：直接面对vue 写vue代码   直接面对html
 - jsx =js + xml babel 将jsx编译为js代码 最后给浏览器渲染执行
@@ -13,6 +14,7 @@
 - 重点 修正this指向、
 - for循环遍历 不可以用index 删除调换位置 一般后端给id
 - 大多数 React 应用只会调用一次 `root.render()`
+- 阻止组件渲染 可以让 `render` 方法直接返回 `null`，而不进行任何渲染 但不影响组件中的生命周期函数 
 
 ## react 编码哲学
 
@@ -52,11 +54,13 @@ function() {
 
 hooks 状态管理 无状态组件
 
-## 事件绑定
+## 事件绑定 事件处理
 
 > onClick
-
-- 方法不加（）
+>
+> 方法不加（）加了会立即执行
+>
+> React 的事件对象 `e` 会被作为第二个参数传递
 
 ```
 <div onClick={this.fun1}></div> //不可加（） 且this指向会指向react undefind 
@@ -69,7 +73,7 @@ fun1(evt) {
 }
 ```
 
-## 改变this指向方案
+#### 改变this指向方案
 
 ### 1. call（） 改变this指向，并且自动执行函数
 
@@ -111,6 +115,12 @@ let ref1 = React.createRef()
 > 状态就是 UI 中的动态数据
 >
 > 父子通信较简单，而深层级、远距离组件的通信，则依赖于 "状态提升" + props 层层传递
+>
+> 不要直接修改state中的值 state监听不到
+>
+> this.setState() 接受一个对象{}或函数
+>
+> 单向向下数据流
 
 ### 写法：
 
@@ -120,7 +130,6 @@ state = {
 constructor() {
 super()
 this.state = {
-
 }
 }
   this.setState({
@@ -130,9 +139,17 @@ this.state = {
 
 ## jsx
 
+## 生命周期
 
+- `componentDidMount()` 方法会在组件已经被渲染到 DOM 中后运行，所以，最好在这里设置计时器
+- `componentWillUnmount()` 生命周期方法中清除计时器：
+- 使用 `this.setState()` 来时刻更新组件 state：
 
+## 表单 使用受控组件 （动态绑定组件）
 
+## 状态提升
+
+将状态提升至就近父组件 有props传入各子组件 子组件改变值后 由子组件调用父组件传入的函数 返回
 
 
 
