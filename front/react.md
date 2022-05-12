@@ -206,3 +206,45 @@ render() {
 > **高阶组件是参数为组件，返回值为新组件的函数。**
 
 用于 组件抽象  之前用mixin 现在弃用
+
+
+
+## 状态管理
+
+content  redux dva
+
+## 类型检查
+
+使用 PropTypes 进行类型检查
+
+也可以使用 Flow 和TypeScript进行类型检查
+
+## Model 跟随路由动态加载
+
+```javascript
+function RouterConfig({ history, app }) {
+  const routes = [
+    {
+      path: '/',
+      name: 'IndexPage',
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          registerModel(app, require('./models/dashboard'));
+          cb(null, require('./routes/IndexPage'));
+        });
+      },
+    },
+    {
+      path: '/users',
+      name: 'UsersPage',
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          registerModel(app, require('./models/users'));
+          cb(null, require('./routes/Users'));
+        });
+      },
+    },
+  ];
+  return <Router history={history} routes={routes} />;
+}
+```

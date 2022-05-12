@@ -45,6 +45,10 @@ objTrim: function(){
 
 ### class继承 
 
+### Jsconfig.json
+
+> **Tip:** `jsconfig.json`源于 TypeScript 的配置文件[tsconfig.json](https://link.juejin.cn/?target=https%3A%2F%2Fwww.typescriptlang.org%2Fdocs%2Fhandbook%2Ftsconfig-json.html)。相当于`tsconfig.json`的`allowJs`属性设置为`true`
+
 ### 类型
 
 #### 1. symbol 新增类型
@@ -155,4 +159,18 @@ avg(2, 3, 4, 5); // 3.5
 ### 原型链
 
 Person.prototype
+
+### symbol
+
+const symbol01 = symbol('hello') 创建全局唯一对象类型 typeof symbol01 = symbol01
+
+> ### [全局共享的 Symbol](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol#全局共享的_symbol)
+>
+> 上面使用`Symbol()` 函数的语法，不会在你的整个代码库中创建一个可用的全局的symbol类型。 要创建跨文件可用的symbol，甚至跨域（每个都有它自己的全局作用域） , 使用 [`Symbol.for()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol/for) 方法和  [`Symbol.keyFor()`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol/keyFor) 方法从全局的symbol注册表设置和取得symbol。
+
+### `function*` 
+
+> 这种声明方式(`function`关键字后跟一个星号）会定义一个***生成器函数\* (***generator function***)**，它返回一个  [`Generator`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Generator) 对象
+
+### Fetch
 
