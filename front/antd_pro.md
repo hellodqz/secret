@@ -24,3 +24,6 @@
 - Reducer 描述如何改变数据的纯函数，接受两个参数：已有结果和 action 传入的数据，通过运算得到新的 state。
 - Effects（Side Effects） 副作用，常见的表现为异步操作。dva 为了控制副作用的操作，底层引入了**[redux-sagas](https://link.zhihu.com/?target=http%3A//superraytin.github.io/redux-saga-in-chinese)**做异步流程控制，由于采用了**[generator 的相关概念](https://link.zhihu.com/?target=http%3A//www.ruanyifeng.com/blog/2015/04/generator.html)**，所以将异步转成同步写法，从而将 effects 转为纯函数。
 - Connect 一个函数，绑定 State 到 View
+
+## 页面代码结构
+
